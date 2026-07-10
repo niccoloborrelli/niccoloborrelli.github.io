@@ -152,6 +152,7 @@
     position: relative;
     transform: rotate(-6deg);
     transition: transform 0.3s ease;
+    text-decoration: none;
   }
   .stamp:nth-child(2){ transform: rotate(4deg); }
   .stamp:nth-child(3){ transform: rotate(-3deg); }
@@ -163,6 +164,8 @@
     border: 1px solid var(--accent);
     border-radius: 50%;
     opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
   }
   .stamp .txt{
     font-family: var(--mono);
@@ -171,8 +174,25 @@
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    position: relative;
+    z-index: 2;
   }
   .stamp .txt .small{ display:block; font-size: 9px; color: var(--muted); margin-top: 6px; letter-spacing: 0.12em; }
+  .stamp img{
+    width: 168px; height: 168px;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    inset: auto;
+    border-radius: 0;
+  }
+  .stamp:has(img){
+    border: none;
+    background: none;
+    width: auto; height: auto;
+    padding: 0;
+  }
+  .stamp:has(img)::before{ display: none; }
 
   /* SKILLS */
   .components{
@@ -241,8 +261,10 @@
     text-transform: uppercase;
     white-space: nowrap;
     width: 1%;
+    min-width: 180px;
+    vertical-align: middle;
   }
-  .spec-table td.desc{ color: var(--line); }
+  .spec-table td.desc{ color: var(--line); vertical-align: middle; }
   .spec-table .accent-text{ color: var(--accent); font-family: var(--mono); font-size: 13px; }
 
   /* TITLE BLOCK / FOOTER */
@@ -262,6 +284,8 @@
   .tb-cell .val{ color: var(--line); font-size: 12.5px; }
   .tb-cell a{ color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
   .tb-cell a:hover{ border-bottom-color: var(--accent); }
+  .spec-table a{ color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  .spec-table a:hover{ border-bottom-color: var(--accent); }
 
   @media (max-width: 640px){
     :root{ --frame: 10px; }
@@ -295,7 +319,7 @@
   <div class="outer-border">
 
     <div class="topbar">
-      <span>PROJECT — PERSONAL PORTFOLIO <span class="dot">/</span> N. BORRELLI</span>
+      <span>PERSONAL PORTFOLIO <span class="dot">/</span> N. BORRELLI</span>
       <span class="hide-mobile">SCALE 1:1 <span class="dot">/</span> STATUS: ACTIVE</span>
     </div>
 
@@ -305,7 +329,7 @@
         <div class="sheet-label">SHEET 01 — TITLE</div>
         <h1>Niccolò<br>Borrelli</h1>
         <div class="role">AWS Cloud Platform Engineer</div>
-        <p class="tagline">Building and operating cloud infrastructure on AWS — from architecture design to automation, provisioned as code.</p>
+        <p class="tagline">Building and operating cloud infrastructure on AWS, from architecture design to automation, provisioned as code.</p>
 
         <div class="diagram-wrap">
           <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing Terraform provisioning AWS infrastructure into production">
@@ -335,20 +359,54 @@
       <section class="sheet certs" id="sheet-02">
         <div class="sheet-label">SHEET 02 — CERTIFICATIONS</div>
         <div class="stamps">
-          <div class="stamp"><div class="txt">AWS Certified<br>Solutions Architect<span class="small">ASSOCIATE</span></div></div>
-          <div class="stamp"><div class="txt">AWS Certified<br>AI Practitioner<span class="small">FOUNDATIONAL</span></div></div>
-          <div class="stamp"><div class="txt">MongoDB Certified<br>Associate SI<span class="small">SYSTEMS INTEGRATOR</span></div></div>
+          <a class="stamp"
+             href="https://www.credly.com/badges/c29f9ebd-cc74-42aa-bd65-3511edd313e9"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="AWS Certified Solutions Architect – Associate (opens Credly)">
+            <img src="https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png"
+                 alt="AWS Certified Solutions Architect – Associate badge"
+                 width="168" height="168">
+          </a>
+          <a class="stamp"
+             href="https://cp.certmetrics.com/amazon/en/public/verify/credential/24a485f4b7224d8b95fc8e99464412be"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="AWS Certified AI Practitioner (opens Credly)">
+            <img src="https://images.credly.com/size/680x680/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png"
+                 alt="AWS Certified AI Practitioner badge"
+                 width="140" height="140">
+          </a>
+          <a class="stamp"
+             href="https://learn.mongodb.com/c/GkOtGyz-TQOFlx9gFvoyxw"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="MongoDB Associate Systems Integrator certification (opens Credly)">
+            <img src="https://images.credly.com/size/680x680/images/5ad4ff7e-2c64-4458-9d1d-a43b3fa26baf/blob"
+                 alt="MongoDB Associate Systems Integrator badge"
+                 width="168" height="168">
+          </a>
         </div>
       </section>
 
       <section class="sheet skills" id="sheet-03">
-        <div class="sheet-label">SHEET 03 — COMPONENTS</div>
+        <div class="sheet-label">SHEET 03 — SKILLS</div>
         <div class="components">
           <div class="component">
             <span class="comp-label">Cloud & Infrastructure</span>
             <ul>
               <li>AWS</li>
               <li>Terraform</li>
+              <li>Kubernetes</li>
+              <li>Networking</li>
+            </ul>
+          </div>
+          <div class="component">
+            <span class="comp-label">CI/CD & DevOps</span>
+            <ul>
+              <li>GitLab CI/CD</li>
+              <li>Git</li>
+              <li>Platform Engineering</li>
             </ul>
           </div>
           <div class="component">
@@ -368,19 +426,19 @@
           <caption>Experience</caption>
           <tr>
             <td class="field">Apr 2024 — Present</td>
-            <td class="desc"><span class="accent-text">Storm Reply</span> — AWS Cloud Platform Engineer<br>Designing and operating AWS cloud infrastructure, including architecture design, automation, and disaster recovery strategies.</td>
+            <td class="desc"><a href="https://www.reply.com/storm-reply/it" target="_blank" rel="noopener" class="accent-text">Storm FS Reply</a> — AWS Cloud Platform Engineer</td>
           </tr>
         </table>
 
         <table class="spec-table">
           <caption>Education</caption>
           <tr>
-            <td class="field">MSc</td>
-            <td class="desc">Computer Science and Engineering — Politecnico di Milano</td>
+            <td class="field">Sep 2021 — Apr 2024</td>
+            <td class="desc"><span class="accent-text">Master</span> Computer Science and Engineering — Politecnico di Milano</td>
           </tr>
           <tr>
-            <td class="field">BSc</td>
-            <td class="desc">Ingegneria Informatica — Politecnico di Milano</td>
+            <td class="field">Sep 2017 — Jul 2021</td>
+            <td class="desc"><span class="accent-text">Bachelor</span> Ingegneria Informatica — Politecnico di Milano</td>
           </tr>
         </table>
       </section>
