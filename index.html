@@ -37,31 +37,74 @@
           <img src="picture.jpg" alt="Niccolò Borrelli" class="profile-pic">
         </div>
 
-        <div class="diagram-wrap">
-          <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing Terraform provisioning AWS infrastructure into production">
-            <line class="cross" x1="0" y1="100" x2="20" y2="100"/>
-            <line class="cross" x1="620" y1="100" x2="640" y2="100"/>
-            <line class="diagram-line" x1="90" y1="100" x2="290" y2="60"/>
-            <line class="diagram-line-dash" x1="330" y1="60" x2="500" y2="140"/>
-            <g class="diagram-node">
-              <circle cx="60" cy="100" r="30"/>
-              <text x="60" y="98" text-anchor="middle">TF</text>
-              <text x="60" y="112" text-anchor="middle" class="sub">TERRAFORM</text>
-            </g>
-            <g class="diagram-node">
-              <circle cx="310" cy="60" r="30"/>
-              <text x="310" y="58" text-anchor="middle">AWS</text>
-              <text x="310" y="72" text-anchor="middle" class="sub">CLOUD</text>
-            </g>
-            <g class="diagram-node">
-              <circle cx="540" cy="140" r="30"/>
-              <text x="540" y="138" text-anchor="middle">PROD</text>
-              <text x="540" y="152" text-anchor="middle" class="sub">DEPLOYED</text>
-            </g>
-          </svg>
+        <div class="projects">
+
+          <details class="project">
+            <summary class="project-header">
+              <span class="project-id">01</span>
+              <span class="project-name">ClaudIA</span>
+              <span class="project-toggle">+</span>
+            </summary>
+            <div class="project-body">
+              <p>An AI agent that streamlines cloud resource provisioning through a conversational interface. The bot guides users through deploying AWS services — Lambda, DynamoDB, SQS and more — collecting mandatory and optional parameters for each resource type (e.g. timeout and memory for Lambda, DLQ and FIFO options for SQS). Once configured, it deploys a Terraform module written to company policy standards onto the selected account.</p>
+              <p>A second mode leverages the AWS DevOps Agent to help engineers troubleshoot issues on existing resources directly from the chat.</p>
+              <div class="project-meta">
+                <span>Role: Design &amp; Implementation</span>
+                <span>Stack: Python · GitLab · AWS Bedrock AgentCore · AWS DevOps Agent · Amazon API Gateway · Amazon CloudFront</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="project">
+            <summary class="project-header">
+              <span class="project-id">02</span>
+              <span class="project-name">Custom Instance Scheduler</span>
+              <span class="project-toggle">+</span>
+            </summary>
+            <div class="project-body">
+              <p>Designed and implemented an enhanced instance scheduler that extends the native AWS Instance Scheduler. The key improvement is the ability to gracefully stop and start application-layer processes before and after the underlying EC2 instances are stopped or started, preventing data loss and ensuring clean state transitions.</p>
+              <div class="project-meta">
+                <span>Role: Design &amp; Implementation</span>
+                <span>Stack: Python · AWS Lambda · AWS Step Functions · Amazon DynamoDB · AWS Systems Manager</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="project">
+            <summary class="project-header">
+              <span class="project-id">03</span>
+              <span class="project-name">Terraform Service Catalog</span>
+              <span class="project-toggle">+</span>
+            </summary>
+            <div class="project-body">
+              <p>Authored and maintains the company's internal Terraform module catalog — a centralised library of reusable, policy-compliant infrastructure components. Modules span compute, networking, database, messaging, AI, and other service categories, enabling teams to provision standardised AWS resources without writing raw Terraform from scratch.</p>
+              <p>Enforces infrastructure standardisation across all workload accounts and achieves 97% compliance with DORA metrics.</p>
+              <div class="project-meta">
+                <span>Role: Author &amp; Maintainer</span>
+                <span>Stack: Terraform · AWS (compute, networking, database, integration, AI, security)</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="project">
+            <summary class="project-header">
+              <span class="project-id">04</span>
+              <span class="project-name">Platform Engineering & Operations</span>
+              <span class="project-toggle">+</span>
+            </summary>
+            <div class="project-body">
+              <p>Day-to-day deployment and maintenance of AWS resources across customer workload accounts, with ownership of the internal platform that the engineering organisation runs on.</p>
+              <p>Platform responsibilities include: delivery pipeline tooling, internal developer portal, wiki automation, user onboarding automation, and network route automation for on-premises connectivity via firewall and Transit Gateway.</p>
+              <p>Supports application teams with troubleshoot of distributed systems issues, and manages integrations with external SaaS platforms including MongoDB Atlas, Databricks and Snowflake.</p>
+              <div class="project-meta">
+                <span>Role: Platform Engineer &amp; Operator</span>
+                <span>Stack: AWS · Terraform · Python · GitLab CI/CD</span>
+              </div>
+            </div>
+          </details>
+
         </div>
       </section>
-
       <section class="sheet certs" id="sheet-02">
         <div class="sheet-label">SHEET 02 — CERTIFICATIONS</div>
         <div class="stamps">

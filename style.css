@@ -132,14 +132,88 @@ main{ flex: 1; }
   color: var(--muted);
   font-size: 1.05rem;
 }
+/* PROJECTS */
+.projects{
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.project{
+  border-top: 1px solid var(--line-dim);
+}
+.project:last-child{
+  border-bottom: 1px solid var(--line-dim);
+}
+.project-header{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.project-header::-webkit-details-marker{ display: none; }
+.project-id{
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  flex-shrink: 0;
+  width: 24px;
+}
+.project-name{
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--line);
+  letter-spacing: 0.04em;
+  flex: 1;
+}
+.project-toggle{
+  font-family: var(--mono);
+  font-size: 20px;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+.project[open] .project-toggle{
+  transform: rotate(45deg);
+}
+.project[open] .project-name{
+  color: var(--accent);
+}
+.project-body{
+  padding: 0 0 28px 44px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 72ch;
+}
+.project-body p{
+  margin: 0 0 12px;
+}
+.project-body p:last-of-type{
+  margin-bottom: 20px;
+}
+.project-meta{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+  opacity: 0.8;
+}
+
+/* DIAGRAM (kept for reference, unused) */
 .diagram-wrap{ margin-top: 56px; }
 .diagram-wrap svg{ width: 100%; height: auto; max-width: 720px; display:block; }
-.diagram-line{ stroke: var(--line-dim); stroke-width: 1.5; fill: none; }
-.diagram-line-dash{ stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 4 4; fill: none; }
-.diagram-node circle{ fill: var(--bg-panel); stroke: var(--line); stroke-width: 1.5; }
-.diagram-node text{ fill: var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; }
-.diagram-node .sub{ fill: var(--muted); font-size: 9px; }
-.cross{ stroke: var(--line-dim); stroke-width: 1; }
 
 /* CERTIFICATIONS */
 .stamps{
