@@ -224,7 +224,7 @@
     <footer class="title-block">
       <div class="tb-cell">
         <span class="label">Name</span>
-        <span class="val">Niccolò Borrelli</span>
+        <span class="val" id="easter-egg" style="cursor:pointer;">Niccolò Borrelli</span>
       </div>
       <div class="tb-cell">
         <span class="label">Contact</span>
@@ -242,7 +242,15 @@
 
   </div>
 
+<audio id="egg-audio" src="ullalla.mp3" preload="none"></audio>
+
 <script>
+  document.getElementById('easter-egg').addEventListener('click', () => {
+    const audio = document.getElementById('egg-audio');
+    audio.currentTime = 0;
+    audio.play();
+  });
+
   const sheets = document.querySelectorAll('.sheet');
   if ('IntersectionObserver' in window){
     const io = new IntersectionObserver((entries)=>{
