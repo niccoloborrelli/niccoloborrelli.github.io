@@ -106,10 +106,29 @@
 
   /* HERO */
   .hero{ padding-top: 48px; }
+  .hero-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 0;
+  }
+  .hero-text{ flex: 1; }
+  .profile-pic{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid var(--accent);
+    flex-shrink: 0;
+    filter: grayscale(20%) contrast(1.05);
+    box-shadow: 0 0 0 8px var(--accent-dim);
+  }
   .hero h1{
     font-size: clamp(2.6rem, 7vw, 5.2rem);
     font-weight: 700;
-    margin: 0 0 6px;
+    margin: 0;
     letter-spacing: -0.01em;
     line-height: 1.02;
   }
@@ -296,6 +315,7 @@
     .tb-cell:first-child{ border-top: none; }
     .stamps{ gap: 24px; justify-content: center; }
     .stamp{ width: 140px; height: 140px; }
+    .profile-pic{ display: none; }
     .topbar span.hide-mobile{ display:none; }
   }
 
@@ -328,9 +348,14 @@
 
       <section class="sheet hero" id="sheet-01">
         <div class="sheet-label">SHEET 01 — TITLE</div>
-        <h1>Niccolò<br>Borrelli</h1>
-        <div class="role">AWS Cloud Platform Engineer</div>
-        <p class="tagline">Building and operating cloud infrastructure on AWS, from architecture design to automation, provisioned as code.</p>
+        <div class="hero-header">
+          <div class="hero-text">
+            <h1>Niccolò<br>Borrelli</h1>
+            <div class="role">AWS Cloud Platform Engineer</div>
+            <p class="tagline">Building and operating cloud infrastructure on AWS, from architecture design to automation, provisioned as code.</p>
+          </div>
+          <img src="picture.jpg" alt="Niccolò Borrelli" class="profile-pic">
+        </div>
 
         <div class="diagram-wrap">
           <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing Terraform provisioning AWS infrastructure into production">
